@@ -1,0 +1,255 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #333333f0;
+    color: #fff;
+}
+
+/* Header */
+.header {
+    background: #000000d4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: relative;
+}
+/* .header img{
+  box-shadow: 0px 0px 20px #333;
+} */
+
+.logo {
+  height: 40px;
+  width: 100px;
+  animation: slideInLeft 1s ease-out;
+}
+
+.logo {
+  animation: slideInLeft 1s ease-out;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: yellow;
+}
+
+
+.container {
+    max-width: 960px;
+    margin: 100px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    color: #fff;
+    text-shadow:2px 3px 3px #b61f1f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 30px 0;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+section p {
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+}
+
+.contact-info strong {
+    display: inline-block;
+    min-width: 120px;
+}
+
+/* Form Styling */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form select {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+form button {
+    background-color: #007bff; /* Primary button color */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Social Media Links */
+.social-links {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Map Styling */
+.map-container {
+    text-align: center;
+    margin-top: 40px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 8px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea,
+    form select {
+        width: calc(100% - 20px);
+    }
+}
+
+.footer_content {
+    background: #000000;
+    margin: 15px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 5px 2px #d1cdcd;
+    padding: 30px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 60px;
+    color: #fff;
+}
+
+.footer_copyright{
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline;
+  align-items: center;
+  background-color: #333333;
+  color: #fff;
+}
+
+.form{
+    margin: 50px;
+}
+@media (max-width: 768px) {
+  /* Mobile Header Navigation */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .nav-toggle div {
+    width: 25px;
+    height: 3px;
+    background: white;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 10;
+  }
+
+  .nav a {
+    padding: 10px;
+    text-align: center;
+    display: block;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  /* Form section */
+  .form {
+    margin: 20px 10px;
+    padding: 10px;
+  }
+
+  /* Footer becomes stacked */
+  .footer_content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+}

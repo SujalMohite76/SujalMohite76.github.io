@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style_3.css">
+</head>
+<body>
+    <header class="header">
+    <img src="S.jpg"  alt="company Logo" class="logo">
+    <div class="nav-toggle" id="navToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="ourwwork.html">Our Work</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<section class="form">
+    <h2>Online Inquiry</h2>
+    <p>Prefer to send us a message directly? Fill out the form below, and we'll respond promptly.</p>
+
+    <form id="inquiryForm" action="#" method="POST"> <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your Name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email">
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number" required>
+
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject" required>
+            <option value="">-- Please Select --</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Request a Quote">Request a Quote</option>
+            <option value="Project Discussion">Project Discussion</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('inquiryForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get values from the form fields
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value; // Added email
+            var phone = document.getElementById("phone").value; // Added phone
+            var subject = document.getElementById("subject").value; // Added subject
+            var userMessage = document.getElementById("message").value;
+
+            // Basic validation (optional, but good practice)
+            if (name.trim() === '' || phone.trim() === '' || subject === '' || userMessage.trim() === '') {
+                alert('Please fill in all required fields (Name, Phone Number, Subject, Message).');
+                return; // Stop the function if validation fails
+            }
+
+            // Construct the WhatsApp message
+            var yourWhatsAppNumber = "918788546061"; // Your WhatsApp number with country code
+            var fullMessage = `Hello, my name is ${name}.
+Email: ${email}
+Phone: ${phone}
+Subject: ${subject}
+Message: ${userMessage}`;
+
+            var encodedMessage = encodeURIComponent(fullMessage);
+            var url = "https://wa.me/" + yourWhatsAppNumber + "?text=" + encodedMessage;
+
+            // Open WhatsApp link in a new tab
+            window.open(url, '_blank');
+
+            // Optionally, clear the form after successful submission (if you want)
+            // form.reset();
+        });
+    });
+</script>
+
+
+<footer>
+  <div class="footer_content">
+    <div class="company info">
+      <h3>SS Fabrication</h3>
+      <p>We Have Experience Worker for Give You Best Solutions as Your Need</p>
+    </div>
+    <div class="footer links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="ourwwork.html">Our Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer Contact">
+      <h3>Contact Us</h3>
+      <p>Email:ssfabrication76@gamil.com</p>
+      <p>Phone:+91 8788546061</p>
+    </div>
+  </div>
+  <div class="footer_copyright">
+    <p>© 2025 [SS Fabrication]. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  const navToggle = document.getElementById("navToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
